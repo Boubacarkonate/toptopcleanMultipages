@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nos Services — Top Top Clean</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo"><span class="logo-top">TOP</span> <span class="logo-bottom">TOP
+                    CLEAN</span></a>
+            <nav class="main-nav">
+                <a href="services.html" class="active">Services</a>
+                <a href="engagements.html">Engagements</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="contact.html" class="btn-outline">Contact / Devis</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero small-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+            url('https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070') 
+            center/cover no-repeat;
+">
+            <div class="container fade-up">
+                <h1>Nos Services</h1>
+                <p>Des prestations haut de gamme adaptées à chaque besoin, pour un résultat d’exception.</p>
+            </div>
+        </section>
+
+        <section class="section fade-up">
+            <div class="container">
+                <div class="grid-3">
+                    <div class="card service-card">
+                        <img src="images/service-pro.png" alt="Nettoyage professionnel" class="service-img">
+                        <h3>Nettoyage Professionnel</h3>
+                        <p>Entretien régulier ou ponctuel d’hôtels, restaurants, bureaux et espaces de prestige.</p>
+                    </div>
+                    <div class="card service-card">
+                        <img src="images/service-particulier.png" alt="Nettoyage résidentiel" class="service-img">
+                        <h3>Résidentiel Haut de Gamme</h3>
+                        <p>Intervention discrète pour villas, appartements et résidences privées.</p>
+                    </div>
+                    <div class="card service-card">
+                        <img src="images/service-luxe.png" alt="Nettoyage de luxe" class="service-img">
+                        <h3>Nettoyage de Luxe</h3>
+                        <p>Prestations sur-mesure pour établissements 5★ et lieux d’exception.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dark fade-up">
+            <div class="container center">
+                <h2>Une approche sur-mesure</h2>
+                <p>Chaque client bénéficie d’un suivi personnalisé, d’un responsable dédié et d’un contrôle qualité
+                    constant.</p>
+                <a href="contact.html" class="btn-primary" style="margin-top:30px;">Obtenir un devis</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Top Top Clean — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

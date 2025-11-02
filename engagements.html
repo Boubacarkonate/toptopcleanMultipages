@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nos Engagements — Top Top Clean</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo"><span class="logo-top">TOP</span> <span class="logo-bottom">TOP
+                    CLEAN</span></a>
+            <nav class="main-nav">
+                <a href="services.html">Services</a>
+                <a href="engagements.html" class="active">Engagements</a>
+                <a href="a-propos.html">À propos</a>
+                <a href="contact.html" class="btn-outline">Contact / Devis</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero small-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), 
+            url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') 
+            center/cover no-repeat;
+
+">
+            <div class="container fade-up">
+                <h1>Nos Engagements</h1>
+                <p>Des valeurs fortes au cœur de chaque intervention : rigueur, confiance et respect.</p>
+            </div>
+        </section>
+
+        <section id="about" class="section dark fade-up">
+            <div class="container">
+                <h2>Pourquoi choisir <span class="accent">Top Top Clean</span> ?</h2>
+                <div class="grid-3" style="margin-top:40px;">
+                    <div class="card fade-up" style="animation-delay:0.1s;">
+                        <span class="iconify icon" data-icon="mdi:diamond"
+                            style="font-size:48px; color:var(--gold);"></span>
+                        <h3>Rigueur & Excellence</h3>
+                        <p>Chaque intervention est contrôlée pour garantir un résultat irréprochable.</p>
+                    </div>
+                    <div class="card fade-up" style="animation-delay:0.2s;">
+                        <span class="iconify icon" data-icon="mdi:leaf"
+                            style="font-size:48px; color:var(--gold);"></span>
+                        <h3>Écologie Responsable</h3>
+                        <p>Produits certifiés et sûrs pour vos espaces et la planète.</p>
+                    </div>
+                    <div class="card fade-up" style="animation-delay:0.3s;">
+                        <span class="iconify icon" data-icon="mdi:shield-check"
+                            style="font-size:48px; color:var(--gold);"></span>
+                        <h3>Confiance & Discrétion</h3>
+                        <p>Nos agents interviennent avec professionnalisme et respect de votre intimité.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Top Top Clean — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

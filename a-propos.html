@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>À propos — Top Top Clean</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo"><span class="logo-top">TOP</span> <span class="logo-bottom">TOP
+                    CLEAN</span></a>
+            <nav class="main-nav">
+                <a href="services.html">Services</a>
+                <a href="engagements.html">Engagements</a>
+                <a href="a-propos.html" class="active">À propos</a>
+                <a href="contact.html" class="btn-outline">Contact / Devis</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero small-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), 
+            url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') 
+            center/cover no-repeat;
+">
+            <div class="container fade-up">
+                <h1>À propos</h1>
+                <p>Top Top Clean, l’art du nettoyage haut de gamme — rigueur, élégance et respect de l’environnement.
+                </p>
+            </div>
+        </section>
+
+        <section class="section dark fade-up">
+            <div class="container">
+                <h2>Notre Histoire</h2>
+                <p>Depuis notre création, nous accompagnons hôtels, restaurants et particuliers exigeants dans la
+                    recherche de la perfection en matière de propreté.</p>
+            </div>
+        </section>
+
+        <section class="section fade-up">
+            <div class="container">
+                <h2>Notre Équipe</h2>
+                <div class="team-grid">
+                    <div class="team-card fade-up" style="animation-delay:0.1s;">
+                        <img src="images/avatar1.jpg" class="avatar" alt="Membre équipe 1">
+                        <p><strong>Équipe dédiée</strong><br>Professionnelle et formée aux standards du luxe.</p>
+                    </div>
+                    <div class="team-card fade-up" style="animation-delay:0.2s;">
+                        <img src="images/avatar2.jpg" class="avatar" alt="Membre équipe 2">
+                        <p><strong>Qualité</strong><br>Chaque mission est validée par un contrôle interne.</p>
+                    </div>
+                    <div class="team-card fade-up" style="animation-delay:0.3s;">
+                        <img src="images/avatar3.jpg" class="avatar" alt="Membre équipe 3">
+                        <p><strong>Service</strong><br>Souplesse et réactivité selon vos besoins.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Top Top Clean — Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

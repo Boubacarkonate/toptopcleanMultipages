@@ -1,0 +1,506 @@
+/* ——— VARIABLES GLOBALES ——— */
+:root {
+    --black: #000;
+    --white: #fff;
+    --gold: #d4af37;
+    --muted: #e6e6e6;
+    --glass: rgba(255, 255, 255, 0.04);
+    --radius: 14px;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    --font-sans: "Montserrat", sans-serif;
+    --font-serif: "Playfair Display", serif;
+}
+
+/* ——— RESET ——— */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+}
+
+/* ——— CONTAINERS ——— */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* ——— HEADER ——— */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    text-decoration: none;
+    color: var(--white);
+    letter-spacing: 2px;
+}
+
+.logo-top {
+    font-weight: 700;
+}
+
+.logo-bottom {
+    font-size: 11px;
+    opacity: 0.7;
+    display: block;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color .3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--gold);
+}
+
+.btn-outline {
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    transition: all .3s;
+}
+
+.btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* ——— HERO ——— */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 46px;
+    color: var(--white);
+    line-height: 1.1;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 16px auto;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.accent {
+    color: var(--gold);
+}
+
+.small-hero {
+    padding: 120px 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* ——— BUTTONS ——— */
+/* Alignement nav + bouton doré */
+.main-nav {
+    display: flex;
+    align-items: center;
+    /* aligne verticalement tous les liens et le bouton */
+    gap: 20px;
+    /* espace entre les liens */
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--gold);
+}
+
+/* Spécifique au bouton doré */
+.main-nav a.btn-outline {
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 8px 16px;
+    display: flex;
+    /* pour rester aligné avec le texte des autres liens */
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.main-nav a.btn-outline:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* .btn-primary {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--gold), #b88f2b);
+    color: var(--black);
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .3s ease;
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.2);
+} */
+
+/* ——— BOUTON PRIMARY SCINTILLANT ——— */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    color: var(--black);
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--gold);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet scintillant pour btn-primary */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0.6) 100%);
+    transform: rotate(45deg) translateX(-100%);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+}
+
+.btn-primary:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+/* Hover inverse : texte doré, fond noir */
+.btn-primary:hover {
+    background: var(--black);
+    color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+
+
+/* Effet hover : scintillement + léger fond */
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3) 0%, rgba(212, 175, 55, 0.2) 50%, rgba(255, 255, 255, 0.3) 100%);
+    transform: rotate(45deg) translateX(-100%);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+}
+
+.btn-outline:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+.btn-outline:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* ——— SECTIONS ——— */
+.hero h1,
+.hero p,
+.how-it-works-cta h2,
+.how-it-works-cta p,
+.contact-section h2,
+.contact-section p {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Bouton doré avec effet scintillant */
+.btn-outline {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.dark {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+}
+
+/* ——— CARDS & GRID ——— */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--glass);
+    border-radius: var(--radius);
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+}
+
+.card h3 {
+    color: var(--gold);
+    font-family: var(--font-serif);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.card img.service-img,
+.card img.icon {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* ——— TEAM ——— */
+.team-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.team-card {
+    flex: 1 1 30%;
+    background: var(--glass);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform .3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card img.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ——— CONTACT FORM ——— */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 8px;
+    color: var(--white);
+    font-family: var(--font-sans);
+}
+
+.contact-form button {
+    align-self: flex-start;
+}
+
+/* ——— FOOTER ——— */
+.site-footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ——— ANIMATIONS ——— */
+.fade-up {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all .7s cubic-bezier(.2, .9, .2, 1);
+}
+
+.fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.iconify.icon {
+    font-size: 48px;
+    color: #d4af37;
+    /* Or doux */
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 0 transparent);
+}
+
+.card:hover .iconify.icon,
+.team-card:hover .iconify.icon {
+    color: #f5d76e;
+    /* Doré plus vif */
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+}
+
+.how-it-works-cta {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+}
+
+.how-it-works-cta h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.steps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* centre les cards horizontalement */
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.steps-grid .card {
+    flex: 1 1 300px;
+    /* cards prennent largeur égale jusqu’à 300px minimum */
+    text-align: center;
+    background: var(--glass);
+    border-radius: var(--radius);
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.steps-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+}
+
+.steps-grid .card span.iconify.icon {
+    font-size: 48px;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+.cta-text {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.cta-text h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.cta-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+/* ——— RESPONSIVE ——— */
+@media (max-width: 900px) {
+    .container {
+        padding: 40px 20px;
+    }
+
+    .btn-outline {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .team-grid {
+        flex-direction: column;
+    }
+
+    .steps-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
