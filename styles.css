@@ -1,15 +1,23 @@
 /* ——— VARIABLES GLOBALES ——— */
 :root {
-    --black: #000;
-    --white: #fff;
-    --gold: #d4af37;
-    --muted: #e6e6e6;
-    --glass: rgba(255, 255, 255, 0.04);
+    --white: #ffffff;
+    /* Fond principal */
+    --offwhite: #fafafa;
+    /* Fond doux alternatif */
+    --black: #111111;
+    /* Texte principal (noir anthracite) */
+    --gray: #666666;
+    /* Texte secondaire */
+    --light-gray: #e5e5e5;
+    /* Bordures et fonds légers */
+    --red: #e50914;
+    /* Accent / boutons / hover */
     --radius: 14px;
-    --shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     --font-sans: "Montserrat", sans-serif;
     --font-serif: "Playfair Display", serif;
 }
+
 
 /* ——— RESET ——— */
 * {
@@ -21,11 +29,25 @@
 html,
 body {
     scroll-behavior: smooth;
-    background: var(--black);
-    color: var(--white);
+    background: var(--white);
+    color: var(--black);
     font-family: var(--font-sans);
     line-height: 1.6;
 }
+
+
+h2,
+h3,
+h4 {
+    color: var(--black);
+    font-family: var(--font-serif);
+    text-align: center;
+}
+
+p {
+    color: var(--gray);
+}
+
 
 /* ——— CONTAINERS ——— */
 .container {
@@ -34,14 +56,18 @@ body {
     padding: 60px 40px;
 }
 
+
 /* ——— HEADER ——— */
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 30;
+    z-index: 10;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(6px);
-    background: rgba(0, 0, 0, 0.7);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    /* hauteur initiale */
 }
 
 .site-header .container {
@@ -50,95 +76,71 @@ body {
     justify-content: space-between;
 }
 
+.site-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.85);
+    /* noir transparent au scroll */
+    padding: 10px 0;
+    /* réduction de la hauteur */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* ombre subtile */
+}
+
+
+.site-header .main-nav a {
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.site-header.scrolled .main-nav a {
+    color: white;
+}
+
+.site-header .main-nav a.btn-outline {
+    border-color: #e50914;
+    color: #e50914;
+}
+
+.site-header.scrolled .main-nav a.btn-outline {
+    border-color: white;
+    color: white;
+}
+
+.site-header .logo {
+    transition: all 0.3s ease;
+    padding: 5px;
+    /* optionnel pour l’espace autour du logo */
+    border-radius: 0;
+    /* par défaut, pas de cercle */
+    background-color: transparent;
+    /* par défaut, fond transparent */
+}
+
+/* Au scroll */
+.site-header.scrolled .logo {
+    background-color: white;
+    /* fond blanc */
+    border-radius: 50%;
+    /* cercle parfait */
+    padding: 5px;
+    /* un peu d’espace autour */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    /* optionnel : ombre subtile */
+}
+
 .logo {
-    font-family: var(--font-serif);
-    font-size: 22px;
-    text-decoration: none;
-    color: var(--white);
-    letter-spacing: 2px;
+    width: 20%;
 }
 
-.logo-top {
-    font-weight: 700;
-}
 
-.logo-bottom {
-    font-size: 11px;
-    opacity: 0.7;
-    display: block;
-}
-
-.main-nav a {
-    color: var(--white);
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 500;
-    transition: color .3s;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-    color: var(--gold);
-}
-
-.btn-outline {
-    padding: 8px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius);
-    transition: all .3s;
-}
-
-.btn-outline:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-}
-
-/* ——— HERO ——— */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 80vh;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
-}
-
-.hero h1 {
-    font-family: var(--font-serif);
-    font-size: 46px;
-    color: var(--white);
-    line-height: 1.1;
-}
-
-.hero p {
-    max-width: 700px;
-    margin: 16px auto;
-    color: rgba(255, 255, 255, 0.85);
-}
-
-.accent {
-    color: var(--gold);
-}
-
-.small-hero {
-    padding: 120px 20px;
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-}
-
-/* ——— BUTTONS ——— */
-/* Alignement nav + bouton doré */
+/* ——— NAVIGATION ——— */
 .main-nav {
     display: flex;
     align-items: center;
-    /* aligne verticalement tous les liens et le bouton */
     gap: 20px;
-    /* espace entre les liens */
 }
 
 .main-nav a {
-    color: var(--white);
+    color: var(--black);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -146,17 +148,16 @@ body {
 
 .main-nav a:hover,
 .main-nav a.active {
-    color: var(--gold);
+    color: var(--red);
 }
 
-/* Spécifique au bouton doré */
+/* Bouton outline dans la nav */
 .main-nav a.btn-outline {
-    color: var(--gold);
-    border: 2px solid var(--gold);
+    color: var(--red);
+    border: 2px solid var(--red);
     border-radius: var(--radius);
     padding: 8px 16px;
     display: flex;
-    /* pour rester aligné avec le texte des autres liens */
     align-items: center;
     justify-content: center;
     background: transparent;
@@ -164,33 +165,21 @@ body {
 }
 
 .main-nav a.btn-outline:hover {
-    background: rgba(212, 175, 55, 0.1);
+    background: transparent;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
-/* .btn-primary {
-    display: inline-block;
-    background: linear-gradient(90deg, var(--gold), #b88f2b);
-    color: var(--black);
-    padding: 12px 24px;
-    border-radius: var(--radius);
-    font-weight: 600;
-    text-decoration: none;
-    transition: all .3s ease;
-    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.2);
-} */
 
-/* ——— BOUTON PRIMARY SCINTILLANT ——— */
+/* ——— BUTTONS ——— */
 .btn-primary {
     display: inline-block;
     padding: 12px 24px;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--red);
     border-radius: var(--radius);
-    color: var(--black);
+    color: var(--white);
     font-weight: 600;
     text-decoration: none;
-    background: var(--gold);
+    background: var(--red);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease, transform 0.2s ease;
@@ -217,17 +206,29 @@ body {
     transform: rotate(45deg) translateX(100%);
 }
 
-/* Hover inverse : texte doré, fond noir */
 .btn-primary:hover {
     background: var(--black);
-    color: var(--gold);
+    color: var(--red);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
 }
 
 
+/* Bouton outline scintillant */
+.btn-outline {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--red);
+    border-radius: var(--radius);
+    color: var(--red);
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease, transform 0.2s ease;
+}
 
-/* Effet hover : scintillement + léger fond */
 .btn-outline::before {
     content: '';
     position: absolute;
@@ -235,7 +236,10 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3) 0%, rgba(212, 175, 55, 0.2) 50%, rgba(255, 255, 255, 0.3) 100%);
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.3) 0%,
+            rgba(229, 9, 20, 0.2) 50%,
+            rgba(255, 255, 255, 0.3) 100%);
     transform: rotate(45deg) translateX(-100%);
     transition: transform 0.5s ease;
     pointer-events: none;
@@ -246,47 +250,148 @@ body {
 }
 
 .btn-outline:hover {
-    background: rgba(212, 175, 55, 0.1);
-    color: var(--gold);
+    background: rgba(229, 9, 20, 0.05);
+    color: var(--red);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.2);
 }
+
+
+/* ——— HERO ——— */
+/* IMAGE DE FOND AVEC BLUR */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/materiel-de-desinfection-sur-table.jpg') center/cover no-repeat;
+    filter: blur(12px) brightness(0.7);
+    z-index: 0;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1.2;
+}
+
+.hero-text h1 {
+    font-family: var(--font-serif);
+    font-size: 46px;
+    color: var(--white);
+    text-shadow: 1px 1px black;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: var(--white);
+    text-shadow: 1px 1px black;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-ctas .btn-primary {
+    padding: 12px 28px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.hero-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+/* animation Ken Burns appliquée via JS */
+@keyframes kenburns {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.1) translate(-5%, -5%);
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image-circle {
+        width: 220px;
+        height: 220px;
+        margin-top: 20px;
+    }
+
+    .hero-image-circle img {
+        width: 200px;
+        height: 200px;
+    }
+
+}
+
+
 
 /* ——— SECTIONS ——— */
-.hero h1,
-.hero p,
-.how-it-works-cta h2,
-.how-it-works-cta p,
-.contact-section h2,
-.contact-section p {
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-}
-
-/* Bouton doré avec effet scintillant */
-.btn-outline {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 2px solid var(--gold);
-    border-radius: var(--radius);
-    color: var(--gold);
-    font-weight: 600;
-    text-decoration: none;
-    background: transparent;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease, transform 0.2s ease;
-}
-
 .section {
     padding: 80px 0;
 }
 
-.dark {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+.section-subtitle {
+    font-size: 16px;
+    color: var(--gray);
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* ——— CARDS & GRID ——— */
 
+.dark {
+    background: var(--offwhite);
+    color: var(--black);
+}
+
+
+/* ——— CARDS & GRID ——— */
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -294,27 +399,27 @@ body {
 }
 
 .card {
-    background: var(--glass);
+    background: var(--white);
     border-radius: var(--radius);
     padding: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--black);
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.2);
 }
 
 .card h3 {
-    color: var(--gold);
+    color: var(--black);
     font-family: var(--font-serif);
     margin-bottom: 10px;
 }
 
 .card p {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--gray);
 }
 
 .card img.service-img,
@@ -323,6 +428,34 @@ body {
     margin-bottom: 20px;
     border-radius: 8px;
 }
+
+.team-card {
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.2);
+}
+
+
+/* Sections spécifiques */
+#services .container p {
+    color: var(--black);
+}
+
+/* #about .container h2 {
+    color: var(--red);
+} */
+
+#about .card {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px;
+    text-align: center;
+}
+
+
 
 /* ——— TEAM ——— */
 .team-grid {
@@ -334,7 +467,8 @@ body {
 
 .team-card {
     flex: 1 1 30%;
-    background: var(--glass);
+    background: var(--white);
+    color: var(--black);
     border-radius: var(--radius);
     padding: 20px;
     display: flex;
@@ -354,13 +488,32 @@ body {
     object-fit: cover;
 }
 
+.team-card strong {
+    color: var(--black);
+}
+
+
+/* ——— ICONES ——— */
+.iconify.icon {
+    color: var(--red);
+    transition: all 0.3s ease;
+}
+
+.card:hover .iconify.icon,
+.team-card:hover .iconify.icon {
+    color: #ff3b3b;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(229, 9, 20, 0.4));
+}
+
+
 /* ——— CONTACT FORM ——— */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    background: var(--glass);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--white);
+    border: 1px solid var(--light-gray);
     border-radius: var(--radius);
     padding: 20px;
 }
@@ -368,24 +521,100 @@ body {
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: var(--offwhite);
+    border: 1px solid var(--light-gray);
     padding: 12px;
     border-radius: 8px;
-    color: var(--white);
+    color: var(--black);
     font-family: var(--font-sans);
 }
 
 .contact-form button {
     align-self: flex-start;
+    background: var(--red);
+    border: none;
+    color: var(--white);
 }
 
+.contact-form button:hover {
+    background: var(--white);
+    color: var(--red);
+}
+
+
 /* ——— FOOTER ——— */
+
 .site-footer {
-    text-align: center;
-    padding: 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
+    background: var(--offwhite);
+    color: var(--black);
+    padding: 60px 0 20px;
+    border-top: 1px solid var(--light-gray);
+    font-family: var(--font-sans);
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-logo .logo {
+    /* max-width: 400px; */
+    width: 20%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    font-size: 14px;
+    color: var(--gray);
+    max-width: 250px;
+}
+
+.footer-menu h3,
+.footer-contact h3 {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--black);
+    text-align: left;
+}
+
+.footer-menu ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu ul li,
+.footer-contact ul li {
+    margin-bottom: 8px;
+}
+
+.footer-menu ul li a,
+.footer-contact ul li a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-menu ul li a:hover,
+.footer-contact ul li a:hover {
+    color: var(--red);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid var(--light-gray);
+    padding-top: 20px;
+    font-size: 14px;
+    color: var(--gray);
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    /* met le copyright à gauche et tu peux ajouter autre info à droite si besoin */
 }
 
 /* ——— ANIMATIONS ——— */
@@ -400,29 +629,14 @@ body {
     transform: translateY(0);
 }
 
-.iconify.icon {
-    font-size: 48px;
-    color: #d4af37;
-    /* Or doux */
-    transition: all 0.3s ease;
-    display: inline-block;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 0 transparent);
+
+/* ——— HOW IT WORKS CTA ——— */
+.how-it-works-cta .card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
-.card:hover .iconify.icon,
-.team-card:hover .iconify.icon {
-    color: #f5d76e;
-    /* Doré plus vif */
-    transform: scale(1.1) rotate(5deg);
-    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
-}
-
-.how-it-works-cta {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
-}
 
 .how-it-works-cta h2 {
     font-family: var(--font-serif);
@@ -434,7 +648,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* centre les cards horizontalement */
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto 50px;
@@ -442,9 +655,8 @@ body {
 
 .steps-grid .card {
     flex: 1 1 300px;
-    /* cards prennent largeur égale jusqu’à 300px minimum */
     text-align: center;
-    background: var(--glass);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: var(--radius);
     padding: 28px;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -459,7 +671,7 @@ body {
 
 .steps-grid .card span.iconify.icon {
     font-size: 48px;
-    color: var(--gold);
+    color: var(--red);
     margin-bottom: 16px;
 }
 
