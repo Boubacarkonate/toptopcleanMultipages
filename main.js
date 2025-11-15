@@ -53,11 +53,17 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.site-header');
+    const topbar = document.querySelector('.topbar');
+
     if (window.scrollY > 50) {
-        header.classList.add('scrolled'); // ajoute fond noir + texte blanc
+        header.classList.add('scrolled');
+        topbar.classList.add('scrolled');
+        topbar.classList.add('.scrolled a');
     } else {
-        header.classList.remove('scrolled'); // revient au fond blanc + texte noir
+        header.classList.remove('scrolled');
+        topbar.classList.remove('scrolled');
     }
 });
+
 
 

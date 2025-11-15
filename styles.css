@@ -56,12 +56,72 @@ p {
     padding: 60px 40px;
 }
 
+/* Bandeau supérieur */
+.topbar {
+    background: #000;
+    color: #fff;
+    padding: 5px 0;
+    font-size: 14px;
+}
 
-/* ——— HEADER ——— */
-.site-header {
+.topbar .container {
+    padding: 2px 40px;
+}
+
+.topbar-content {
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+    align-items: center;
+}
+
+.topbar-content span {
+    display: flex;
+    align-items: center;
+}
+
+.topbar a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.topbar a:hover {
+    opacity: 0.7;
+}
+
+.topbar {
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 20;
+    background: #000;
+    color: #fff;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+.topbar.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+    color: #111111;
+}
+
+.topbar.scrolled a {
+    color: #111111;
+}
+
+
+
+/* ——— HEADER ——— */
+.site-header .a {
+    background-color: #e50914;
+}
+
+.site-header {
+    position: sticky;
+    top: 30px;
+    z-index: 19;
     transition: background-color 0.3s ease, padding 0.3s ease;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(6px);
@@ -74,6 +134,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 40px;
 }
 
 .site-header.scrolled {
@@ -125,6 +186,7 @@ p {
     /* un peu d’espace autour */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     /* optionnel : ombre subtile */
+    margin-top: 10px;
 }
 
 .logo {
@@ -136,7 +198,7 @@ p {
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 60px;
 }
 
 .main-nav a {
@@ -374,6 +436,17 @@ p {
     padding: 80px 0;
 }
 
+.section .card:hover {
+
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.2);
+
+}
+
+.section .card {
+    text-align: center;
+}
+
 .section-subtitle {
     font-size: 16px;
     color: var(--gray);
@@ -455,6 +528,11 @@ p {
     text-align: center;
 }
 
+#about .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.2);
+}
+
 
 
 /* ——— TEAM ——— */
@@ -479,6 +557,7 @@ p {
 
 .team-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.2);
 }
 
 .team-card img.avatar {
@@ -627,6 +706,7 @@ p {
 .fade-up.in-view {
     opacity: 1;
     transform: translateY(0);
+    /* text-align: center; */
 }
 
 
@@ -666,7 +746,7 @@ p {
 
 .steps-grid .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 25px rgba(229, 9, 20, 0.2);
 }
 
 .steps-grid .card span.iconify.icon {
