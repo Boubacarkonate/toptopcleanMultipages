@@ -891,3 +891,14 @@ p {
         height: 240px;
     }
 }
+
+.section .engagement-icon-item {
+    margin-top: 60px;
+}
+
+.icon-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* espace entre icône et texte */
+}
