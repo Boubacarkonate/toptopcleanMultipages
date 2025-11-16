@@ -10,10 +10,20 @@
 
 <body>
 
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="container topbar-content">
+            <span><span class="iconify" data-icon="mdi:phone" style="font-size:18px; margin-right:6px;"></span>
+                <a href="tel:+33123456789">+33 1 23 45 67 89</a></span>
+            <span><span class="iconify" data-icon="mdi:email" style="font-size:18px; margin-right:6px;"></span>
+                <a href="mailto:contact@toptopclean.com">contact@toptopclean.com</a></span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
     <header class="site-header">
         <div class="container">
-            <a href="index.html" class="logo"><span class="logo-top">TOP</span> <span class="logo-bottom">TOP
-                    CLEAN</span></a>
+            <a href="index.html"><img src="images/IMG-20251112-WA0000-removebg-preview.png" alt="logo" class="logo"></a>
             <nav class="main-nav">
                 <a href="services.html">Services</a>
                 <a href="engagements.html">Engagements</a>
@@ -24,16 +34,32 @@
     </header>
 
     <main>
-        <section class="hero small-hero" style="background:url('images/contact-bg.jpg') center/cover no-repeat;">
-            <div class="container fade-up">
-                <h1>Contact & Devis</h1>
-                <p>Confiez-nous vos espaces, nous en ferons des lieux d’exception.</p>
+
+        <!-- HERO -->
+        <section id="hero" class="hero-section fade-up">
+            <div class="hero-services-bg"></div> <!-- Blur de fond -->
+            <div class="container hero-content">
+                <div class="hero-text fade-up">
+                    <h1>Contact & Devis</h1>
+                    <p><span style="font-size: x-large; font-weight: bolder;">Top Top Clean KD</span> — le partenaire
+                        propreté des bureaux, commerces, particuliers, hottes
+                        de cuisines
+                        professionnelles et chantiers. Discrétion, rigueur et résultats irréprochables.</p>
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#contact-form" class="btn-primary">Envoyer ma demande</a>
+                    </div>
+                </div>
             </div>
         </section>
 
+
+        <!-- FORMULAIRE ET COORDONNÉES -->
         <section class="section fade-up">
-            <div class="container two-col">
-                <div>
+            <div class="container two-col" id="contact-form">
+
+                <!-- Formulaire -->
+                <div class="fade-up" style="animation-delay:0.1s;">
                     <form class="contact-form"
                         onsubmit="event.preventDefault(); alert('Formulaire envoyé (maquette). Merci !');">
                         <input type="text" placeholder="Nom / Société" required>
@@ -48,26 +74,59 @@
                         <button class="btn-primary">Envoyer ma demande</button>
                     </form>
                 </div>
-                <div class="fade-up" style="animation-delay:0.2s;">
-                    <h3>Coordonnées</h3>
-                    <p><strong>Email :</strong> contact@toptopclean.com<br>
-                        <strong>Tél :</strong> +33 1 23 45 67 89
-                    </p>
-                    <p><strong>Adresse :</strong><br>Paris & Île-de-France</p>
-                    <p><strong>Horaires :</strong><br>Lun-Ven : 8h-19h</p>
-                </div>
+
+
+
             </div>
         </section>
+
+
+
+
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
+    <!-- FOOTER -->
+    <footer class="site-footer section fade-up">
+        <div class="container footer-flex">
+            <div class="footer-logo">
+                <a href="index.html"><img src="images/IMG-20251112-WA0000-removebg-preview.png" alt="logo"
+                        class="logo"></a>
+                <p class="footer-description">
+                    Votre partenaire propreté pour bureaux, commerces, particuliers, hottes de cuisines et fins de
+                    chantiers.
+                </p>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="engagements.html">Engagements</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email : <a href="mailto:contact@toptopclean.com">contact@toptopclean.com</a></li>
+                    <li>Téléphone : <a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                    <li>Adresse : 123 Rue de la Propreté, 75000 Paris</li>
+                    <li>Horaires : lundi au vendredi, 8h – 18h</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
             <p>© <span id="year"></span> Top Top Clean — Tous droits réservés.</p>
         </div>
     </footer>
 
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <script src="main.js"></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
 </body>
 
 </html>

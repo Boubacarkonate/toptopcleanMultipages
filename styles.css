@@ -363,6 +363,10 @@ p {
     flex: 1.2;
 }
 
+.hero-text {
+    text-align: center;
+}
+
 .hero-text h1 {
     font-family: var(--font-serif);
     font-size: 46px;
