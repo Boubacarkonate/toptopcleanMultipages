@@ -340,8 +340,32 @@ p {
 .hero-services-bg {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+    background: url('images/still-life-d-outils-de-nettoyage.jpg') center/cover no-repeat;
     filter: blur(12px) brightness(0.7);
+    z-index: 0;
+}
+
+.hero-engagement-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/gros-plan-des-mains-avec-des-gants.jpg') center/cover no-repeat;
+    filter: blur(12px) brightness(0.7);
+    z-index: 0;
+}
+
+.hero-propos-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/plein-coup-d-hommes-portant-de-l-equipement.jpg') center/cover no-repeat;
+    filter: blur(12px) brightness(0.7);
+    z-index: 0;
+}
+
+.hero-contact-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/assistance.jpg') center/cover no-repeat;
+    filter: blur(8px) brightness(0.7);
     z-index: 0;
 }
 
