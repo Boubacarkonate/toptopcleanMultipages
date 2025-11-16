@@ -11,19 +11,22 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 
 // Année dynamique dans le footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
 
- const images = [
-        'images/nettoyage-hotte-professionnelle-restaurant.webp',
-        'images/personne-qui-s-occupe-du-nettoyage-des-bureaux.jpg',
-        'images/chantier.jpg',
+const images = [
+    'images/nettoyage-hotte-professionnelle-restaurant.webp',
+    'images/personne-qui-s-occupe-du-nettoyage-des-bureaux.jpg',
+    'images/chantier.jpg',
+];
 
-    ];
+const circle = document.querySelector('.hero-image-circle');
+const INTERVAL = 6000;
+let idx = 0;
 
-   const circle = document.querySelector('.hero-image-circle');
-    const INTERVAL = 6000;
-    let idx = 0;
-
+if (circle) {
     function changeImage() {
         // Crée un nouvel élément img pour la transition
         const newImg = document.createElement('img');
@@ -50,15 +53,18 @@ document.getElementById('year').textContent = new Date().getFullYear();
     // Lance la première image
     changeImage();
     setInterval(changeImage, INTERVAL);
+}
 
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.site-header');
     const topbar = document.querySelector('.topbar');
 
+    // Sécurité : si header/topbar manquent, rien à faire
+    if (!header || !topbar) return;
+
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
         topbar.classList.add('scrolled');
-        topbar.classList.add('.scrolled a');
     } else {
         header.classList.remove('scrolled');
         topbar.classList.remove('scrolled');
