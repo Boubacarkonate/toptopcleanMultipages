@@ -9,10 +9,22 @@
 </head>
 
 <body>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="container topbar-content">
+            <span><span class="iconify" data-icon="mdi:phone" style="font-size:18px; margin-right:6px;"></span>
+                <a href="tel:+33123456789">+33 1 23 45 67 89</a></span>
+            <span><span class="iconify" data-icon="mdi:email" style="font-size:18px; margin-right:6px;"></span>
+                <a href="mailto:contact@toptopclean.com">contact@toptopclean.com</a></span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
     <header class="site-header">
         <div class="container">
-            <a href="index.html" class="logo"><span class="logo-top">TOP</span> <span class="logo-bottom">TOP
-                    CLEAN</span></a>
+            <a href="index.html"><img src="images/IMG-20251112-WA0000-removebg-preview.png" alt="logo" class="logo"></a>
+
             <nav class="main-nav">
                 <a href="services.html" class="active">Services</a>
                 <a href="engagements.html">Engagements</a>
@@ -21,58 +33,211 @@
             </nav>
         </div>
     </header>
-
     <main>
-        <section class="hero small-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
-            url('https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070') 
-            center/cover no-repeat;
-">
-            <div class="container fade-up">
-                <h1>Nos Services</h1>
-                <p>Des prestations haut de gamme adaptées à chaque besoin, pour un résultat d’exception.</p>
+
+        <!-- HERO -->
+        <section id="hero" class="hero-section fade-up">
+            <div class="hero-services-bg"></div> <!-- Blur de fond -->
+            <div class="container hero-content">
+                <div class="hero-text fade-up">
+                    <h1>L’excellence du nettoyage<br><span class="accent">pour tous vos espaces</span></h1>
+                    <p>
+                    <p><span style="font-size: x-large; font-weight: bolder;">Top Top Clean KD</span> — le partenaire
+                        propreté des bureaux, commerces, particuliers, hottes
+                        de cuisines
+                        professionnelles et chantiers. Discrétion, rigueur et résultats irréprochables.</p>
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="contact.html" class="btn-primary">Demander un devis</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
+        <!-- LISTE DES SERVICES -->
+        <section class="section fade-up">
+            <div class="container services-grid">
+
+                <!-- Service 1 -->
+                <div class="service-item">
+                    <img src="images/nettoyage-hotte-professionnelle-restaurant.webp" alt="Nettoyage de hotte">
+                    <div class="service-text">
+                        <h3>Nettoyage de Hotte Professionnelle</h3>
+                        <p>
+                            Entretien complet des hottes et conduits de cuisine, y compris filtres et moteurs, pour
+                            éliminer toutes traces de graisse et bactéries.
+                            Ce service garantit non seulement l’hygiène et la sécurité alimentaire, mais prolonge aussi
+                            la durée de vie de votre matériel.
+                            Idéal pour restaurants, hôtels et établissements de restauration collective exigeants.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 (l'alternance se fera avec CSS) -->
+                <div class="service-item">
+                    <img src="images/personne-qui-s-occupe-du-nettoyage-des-bureaux.jpg" alt="Nettoyage particulier">
+                    <div class="service-text">
+                        <h3>Nettoyage Professionnel</h3>
+                        <p>
+                            Nous assurons un entretien régulier ou ponctuel de vos bureaux, commerces et locaux
+                            professionnels.
+                            Chaque intervention est réalisée avec des produits professionnels et des protocoles stricts
+                            pour garantir un environnement propre, sain et agréable pour vos collaborateurs et clients.
+                            Flexibilité, discrétion et ponctualité sont nos priorités.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-item">
+                    <img src="images/personne-qui-s-occupe-du-nettoyage-des-bureaux.jpg" alt="Nettoyage particulier">
+                    <div class="service-text">
+                        <h3>Nettoyage Particulier</h3>
+                        <p>
+                            Nous proposons des prestations de nettoyage pour appartements, maisons et résidences
+                            privées.
+                            Notre équipe utilise des produits sûrs et écologiques, avec un soin particulier pour les
+                            zones sensibles comme les cuisines, salles de bain et sols délicats.
+                            Discrétion, minutie et professionnalisme garantissent un intérieur impeccable et
+                            accueillant.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-item">
+                    <img src="images/chantier.jpg" alt="Fin de chantier">
+                    <div class="service-text">
+                        <h3>Nettoyage de Fin de Chantier</h3>
+                        <p>
+                            Après travaux ou rénovations, nous assurons un nettoyage complet des lieux : enlèvement des
+                            gravats, poussières et résidus, lavage des sols et vitrages, dépoussiérage complet des
+                            surfaces et équipements.
+                            Ce service permet une remise à neuf rapide et professionnelle, prête pour l’occupation ou la
+                            réception.
+                            Idéal pour les chantiers, bureaux rénovés ou appartements fraîchement construits.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ÉQUIPE -->
         <section class="section fade-up">
             <div class="container">
+                <h2>Notre Équipe</h2>
+                <p class="section-subtitle">Une équipe qualifiée et disponible pour répondre à vos besoins au quotidien.
+                </p>
                 <div class="grid-3">
-                    <div class="card service-card">
-                        <img src="images/service-pro.png" alt="Nettoyage professionnel" class="service-img">
-                        <h3>Nettoyage Professionnel</h3>
-                        <p>Entretien régulier ou ponctuel d’hôtels, restaurants, bureaux et espaces de prestige.</p>
+                    <div class="card fade-up" style="animation-delay:0.1s;">
+                        <span class="iconify icon" data-icon="mdi:account-group"
+                            style="font-size:48px; color:#e50914;"></span>
+                        <h3>Équipe dédiée</h3>
+                        <p>Personnel formé et équipé pour vos interventions.</p>
                     </div>
-                    <div class="card service-card">
-                        <img src="images/service-particulier.png" alt="Nettoyage résidentiel" class="service-img">
-                        <h3>Résidentiel Haut de Gamme</h3>
-                        <p>Intervention discrète pour villas, appartements et résidences privées.</p>
+                    <div class="card fade-up" style="animation-delay:0.2s;">
+                        <span class="iconify icon" data-icon="mdi:check-decagram"
+                            style="font-size:48px; color:#e50914;"></span>
+                        <h3>Qualité</h3>
+                        <p>Procédures validées pour garantir un nettoyage irréprochable.</p>
                     </div>
-                    <div class="card service-card">
-                        <img src="images/service-luxe.png" alt="Nettoyage de luxe" class="service-img">
-                        <h3>Nettoyage de Luxe</h3>
-                        <p>Prestations sur-mesure pour établissements 5★ et lieux d’exception.</p>
+                    <div class="card fade-up" style="animation-delay:0.3s;">
+                        <span class="iconify icon" data-icon="mdi:handshake"
+                            style="font-size:48px; color:#e50914;"></span>
+                        <h3>Service</h3>
+                        <p>Flexibilité et réactivité adaptées à votre emploi du temps.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="section dark fade-up">
-            <div class="container center">
-                <h2>Une approche sur-mesure</h2>
-                <p>Chaque client bénéficie d’un suivi personnalisé, d’un responsable dédié et d’un contrôle qualité
-                    constant.</p>
-                <a href="contact.html" class="btn-primary" style="margin-top:30px;">Obtenir un devis</a>
+        <!-- COMMENT ÇA MARCHE + CALL TO ACTION -->
+        <section id="how-it-works" class="section fade-up">
+            <div class="container text-center">
+                <h2>Comment ça marche ?</h2>
+                <p class="section-subtitle">Des étapes simples pour bénéficier de notre expertise en nettoyage.</p>
+                <div class="grid-3 steps-grid">
+                    <div class="card fade-up" style="animation-delay:0.1s;">
+                        <span class="iconify icon" data-icon="mdi:phone" style="font-size:48px; color:#e50914;"></span>
+                        <h3>Contactez-nous</h3>
+                        <p>Remplissez le formulaire ou appelez-nous pour nous exposer vos besoins.</p>
+                    </div>
+                    <div class="card fade-up" style="animation-delay:0.2s;">
+                        <span class="iconify icon" data-icon="mdi:file-document"
+                            style="font-size:48px; color:#e50914;"></span>
+                        <h3>Votre devis gratuit</h3>
+                        <p>Recevez rapidement un devis clair et adapté à votre situation.</p>
+                    </div>
+                    <div class="card fade-up" style="animation-delay:0.3s;">
+                        <span class="iconify icon" data-icon="mdi:broom" style="font-size:48px; color:#e50914;"></span>
+                        <h3>Intervention</h3>
+                        <p>Nos équipes interviennent avec professionnalisme et discrétion pour un résultat impeccable.
+                        </p>
+                    </div>
+                </div>
+                <div class="cta-text">
+                    <h2>Confiez-nous la Propreté de Vos Espaces</h2>
+                    <p>Bénéficiez de notre expertise pour des solutions de nettoyage sur-mesure, adaptées à vos besoins
+                        professionnels ou résidentiels.</p>
+                    <a href="contact.html" class="btn-primary">Demander un devis</a>
+                </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
+    <!-- FOOTER -->
+    <footer class="site-footer section fade-up">
+        <div class="container footer-flex">
+
+            <!-- Logo + description -->
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="images/IMG-20251112-WA0000-removebg-preview.png" alt="logo" class="logo">
+                </a>
+                <p class="footer-description">
+                    Votre partenaire propreté pour bureaux, commerces, particuliers, hottes de cuisines et fins de
+                    chantiers.
+                </p>
+            </div>
+
+            <!-- Menu rapide -->
+            <div class="footer-menu">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="engagements.html">Engagements</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email : <a href="mailto:contact@toptopclean.com">contact@toptopclean.com</a></li>
+                    <li>Téléphone : <a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                    <li>Adresse : 123 Rue de la Propreté, 75000 Paris</li>
+                    <li>Horaires : lundi au vendredi, 8h – 18h</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
             <p>© <span id="year"></span> Top Top Clean — Tous droits réservés.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <script src="main.js"></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
 </body>
 
 </html>
