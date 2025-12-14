@@ -70,6 +70,27 @@ window.addEventListener('scroll', function() {
         topbar.classList.remove('scrolled');
     }
 });
+/* ===== MENU BURGER ===== */
 
+const burger = document.getElementById("burger");
+const nav = document.querySelector(".main-nav");
+
+function toggleMenu() {
+    const isOpen = burger.classList.toggle("active");
+    nav.classList.toggle("open");
+
+    // Empêche le scroll
+    // document.body.classList.toggle("no-scroll", isOpen);
+
+    // Cache la topbar + le header
+    document.documentElement.classList.toggle("menu-open", isOpen);
+}
+
+burger.addEventListener("click", toggleMenu);
+
+// Fermeture si on clique sur un lien du menu
+document.querySelectorAll(".main-nav a").forEach(link => {
+    link.addEventListener("click", toggleMenu);
+});
 
 

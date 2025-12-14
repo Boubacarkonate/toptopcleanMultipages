@@ -8,6 +8,7 @@
    5. Composants
       - Topbar
       - Header
+      - Menu burger
       - Navigation
       - Buttons
       - Cards
@@ -279,12 +280,92 @@ ol {
     margin-top: var(--spacing-xs);
 }
 
+/* --- Menu burger : mobile --- */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 40;
+}
+
+/* Burger basique */
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: black;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Couleur burger en header scrollé */
+.site-header.scrolled .burger span {
+    background: white;
+}
+
+/* Animation → croix */
+.burger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Quand le menu est ouvert → burger blanc */
+.burger.active span {
+    background-color: white !important;
+}
+
+
+/* Bouton de fermeture (croix) dans le menu mobile) */
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 60;
+    transition: transform 0.2s ease;
+}
+
+.close-menu:hover {
+    transform: scale(1.1);
+}
+
+/* Quand le menu mobile est ouvert → header + topbar disparaissent */
+
+.menu-open .top-bar {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 
 /* ----- Navigation ----- */
 .main-nav {
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
+    z-index: 50;
+    /* le menu DOIT être au-dessus */
 }
 
 .main-nav a {
@@ -362,6 +443,7 @@ ol {
 /* Button Outline */
 .btn-outline,
 .main-nav a.btn-outline {
+    text-align: center;
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -676,12 +758,12 @@ ol {
     font-size: var(--font-size-large);
 } */
 
-#about .card {
+/* #about .card {
     border-radius: var(--radius-base);
     box-shadow: var(--shadow-base);
     padding: 28px;
     text-align: center;
-}
+} */
 
 
 /* ----- Team ----- */
@@ -756,6 +838,11 @@ ol {
     padding: 28px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: var(--shadow-base);
+}
+
+.steps-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .steps-grid .card span.iconify.icon {
@@ -905,12 +992,51 @@ ol {
 
     /* Navigation */
     .main-nav {
-        gap: var(--spacing-sm);
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        gap: 30px;
+        transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 50;
     }
 
-    .btn-outline {
-        padding: var(--spacing-xs) var(--spacing-sm);
-        font-size: var(--font-size-small);
+    .main-nav.open {
+        left: 0;
+        height: 100vh;
+    }
+
+    .main-nav a {
+        color: white !important;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .main-nav a:not(.btn-outline):hover {
+        color: var(--color-red) !important;
+    }
+
+
+    /* Burger visible */
+    .burger {
+        display: flex;
+        z-index: 999;
+    }
+
+    /* Couleurs du burger */
+    .burger span {
+        background: black !important;
+    }
+
+    .site-header.scrolled .burger span {
+        background: white !important;
     }
 
     /* Hero */
@@ -920,8 +1046,8 @@ ol {
     }
 
     .hero-image-circle {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
         margin-top: var(--spacing-sm);
     }
 
@@ -929,6 +1055,12 @@ ol {
         width: 200px;
         height: 200px;
     }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+    }
+
 
     /* Services */
     .service-item {
@@ -965,4 +1097,19 @@ ol {
     .form-row {
         grid-template-columns: 1fr;
     }
+
+    .grid-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .iframe {
+        text-align: center;
+    }
+
 }
+
+/* @media (max-width: 768px) {
+    .grid-3 {
+        grid-template-columns: 1fr !important;
+    }
+} */
