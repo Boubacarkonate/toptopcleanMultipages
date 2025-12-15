@@ -383,6 +383,10 @@ ol {
     color: var(--color-white);
 }
 
+.site-header.scrolled .main-nav a:hover {
+    color: var(--color-red-light);
+}
+
 .site-header.scrolled .main-nav a.btn-outline {
     border-color: var(--color-white);
     color: var(--color-white);
