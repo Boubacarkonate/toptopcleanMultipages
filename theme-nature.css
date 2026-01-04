@@ -1,0 +1,477 @@
+/* ========================================
+   THEME NATURE - Vert Écologique
+   ======================================== */
+
+:root {
+    /* === COULEURS PRINCIPALES === */
+    --color-white: #ffffff;
+    --color-offwhite: #f1f8f4;
+    /* Fond vert très clair */
+    --color-black: #1a3a2e;
+    /* Vert très foncé */
+    --color-gray: #5a7766;
+    /* Gris-vert pour textes */
+    --color-light-gray: #d4e7dc;
+    /* Bordures vertes claires */
+
+    /* Couleur d'accent : Vert nature */
+    --color-accent: #2d8659;
+    /* Vert forêt */
+    --color-accent-light: #3bb878;
+    /* Vert clair hover */
+    --color-accent-dark: #1f5d3d;
+    /* Vert foncé */
+
+    /* Dégradés vert pour effets premium */
+    --gradient-green: linear-gradient(135deg, #2d8659 0%, #3bb878 50%, #2d8659 100%);
+    --gradient-green-hover: linear-gradient(135deg, #3bb878 0%, #54d698 50%, #3bb878 100%);
+
+    /* === BACKGROUNDS === */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f1f8f4;
+    --bg-card: rgba(45, 134, 89, 0.03);
+    --bg-card-hover: #f9fcfb;
+
+    /* === BORDURES & OMBRES === */
+    --border-color: #d4e7dc;
+    --border-accent: #2d8659;
+
+    --shadow-base: 0 6px 20px rgba(45, 134, 89, 0.08);
+    --shadow-hover: 0 10px 30px rgba(45, 134, 89, 0.15);
+    --shadow-glow: 0 0 20px rgba(45, 134, 89, 0.3);
+    --shadow-button: 0 4px 15px rgba(45, 134, 89, 0.25);
+
+    /* === TYPOGRAPHIE === */
+    --text-primary: #1a3a2e;
+    --text-secondary: #5a7766;
+    --text-muted: #8fa89c;
+}
+
+/* ========================================
+   ÉLÉMENTS GLOBAUX
+   ======================================== */
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ========================================
+   TOPBAR
+   ======================================== */
+
+.topbar {
+    background: linear-gradient(90deg, #1a3a2e 0%, #2d5a47 100%);
+    backdrop-filter: blur(10px);
+    color: var(--color-white);
+}
+
+.topbar a {
+    color: var(--color-white);
+}
+
+.topbar a:hover {
+    color: var(--color-accent-light);
+}
+
+.topbar .iconify {
+    color: var(--color-accent-light) !important;
+}
+
+.topbar.scrolled {
+    background: rgba(26, 58, 46, 0.7);
+    backdrop-filter: blur(6px);
+}
+
+.topbar.scrolled a {
+    color: var(--color-white);
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.site-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.site-header.scrolled {
+    background: rgba(26, 58, 46, 0.95);
+    backdrop-filter: blur(6px);
+}
+
+.site-header .logo {
+    filter: brightness(1.1) contrast(1.05);
+}
+
+.site-header.scrolled .logo {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+    border: 2px solid var(--color-accent-light);
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.main-nav a {
+    color: var(--text-primary);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-accent);
+}
+
+.site-header.scrolled .main-nav a {
+    color: var(--color-white);
+}
+
+.site-header.scrolled .main-nav a:hover {
+    color: var(--color-accent-light);
+}
+
+/* Menu mobile */
+@media (max-width: 900px) {
+    .main-nav {
+        background: linear-gradient(180deg, #1a3a2e 0%, #2d5a47 100%);
+    }
+
+    .main-nav a {
+        color: var(--color-white) !important;
+    }
+
+    .main-nav a:not(.btn-outline):hover {
+        color: var(--color-accent-light) !important;
+    }
+}
+
+/* ========================================
+   BOUTONS
+   ======================================== */
+
+/* Button Primary */
+.btn-primary {
+    background: var(--gradient-green);
+    border: 2px solid var(--color-accent);
+    color: var(--color-white);
+    font-weight: 700;
+    box-shadow: var(--shadow-button);
+    text-shadow: none;
+}
+
+.btn-primary:hover {
+    background: var(--gradient-green-hover);
+    border-color: var(--color-accent-light);
+    color: var(--color-white);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-3px);
+}
+
+/* Button Outline */
+.btn-outline,
+.main-nav a.btn-outline {
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    background: transparent;
+}
+
+.btn-outline:hover,
+.main-nav a.btn-outline:hover {
+    background: var(--color-accent);
+    color: var(--color-white) !important;
+    border-color: var(--color-accent-light);
+    box-shadow: var(--shadow-glow);
+}
+
+.site-header.scrolled .main-nav a.btn-outline {
+    border-color: var(--color-accent-light);
+    color: var(--color-accent-light);
+}
+
+/* ========================================
+   BURGER MENU
+   ======================================== */
+
+.burger span {
+    background: var(--text-primary);
+}
+
+.site-header.scrolled .burger span {
+    background: var(--color-accent-light);
+}
+
+.burger.active span {
+    background-color: var(--color-accent-light) !important;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
+    background: var(--bg-primary);
+}
+
+.hero-bg {
+    filter: blur(12px) brightness(0.5) saturate(1.3);
+}
+
+.hero-text h1 {
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-text h1 .accent {
+    color: var(--color-accent-light);
+    background: var(--gradient-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    color: var(--color-white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-image-circle {
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 30px rgba(45, 134, 89, 0.4),
+        0 0 60px rgba(45, 134, 89, 0.2);
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+.section {
+    background: var(--bg-primary);
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+}
+
+.title-part-h2 {
+    color: var(--text-primary);
+}
+
+.title-part-h2 span {
+    color: var(--color-accent);
+    background: var(--gradient-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-base);
+}
+
+.card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    color: var(--color-accent);
+}
+
+.card p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   ICÔNES
+   ======================================== */
+
+.iconify.icon {
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 5px rgba(45, 134, 89, 0.3));
+    font-size: 48px;
+}
+
+.card:hover .iconify.icon {
+    color: var(--color-accent-light);
+    filter: drop-shadow(0 0 10px rgba(45, 134, 89, 0.6));
+}
+
+/* ========================================
+   SERVICES
+   ======================================== */
+
+.service-card img {
+    border: 2px solid var(--border-color);
+}
+
+.service-text h3 {
+    color: var(--text-primary);
+}
+
+.service-text p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   FORMULAIRES
+   ======================================== */
+
+.contact-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(45, 134, 89, 0.2);
+}
+
+/* ========================================
+   CTA TEXT
+   ======================================== */
+
+.cta-text h2 {
+    color: var(--text-primary);
+}
+
+.cta-text p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.site-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-logo .logo {
+    filter: brightness(1.1);
+}
+
+.footer-description {
+    color: var(--text-secondary);
+}
+
+.footer-menu h3,
+.footer-contact h3 {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-menu ul li,
+.footer-contact ul li {
+    color: var(--text-secondary);
+}
+
+.footer-menu ul li a,
+.footer-contact ul li a {
+    color: var(--text-secondary);
+}
+
+.footer-menu ul li a:hover,
+.footer-contact ul li a:hover {
+    color: var(--color-accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+/* ========================================
+   STEPS GRID
+   ======================================== */
+
+.steps-grid .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+.steps-grid .card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ========================================
+   EFFETS SPÉCIAUX NATURE
+   ======================================== */
+
+/* Effet brillance sur les titres */
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.title-part-h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(45, 134, 89, 0.2),
+            transparent);
+    animation: shimmer 3s infinite;
+}
+
+/* Feuilles naturelles (optionnel) */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(45, 134, 89, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* ========================================
+   AJUSTEMENTS RESPONSIVE
+   ======================================== */
+
+@media (max-width: 900px) {
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .title-part-h2 {
+        font-size: 28px;
+    }
+}

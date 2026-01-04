@@ -1,0 +1,477 @@
+/* ========================================
+   THEME OCEAN - Bleu Professionnel
+   ======================================== */
+
+:root {
+    /* === COULEURS PRINCIPALES === */
+    --color-white: #ffffff;
+    --color-offwhite: #f0f8ff;
+    /* Fond bleu très clair */
+    --color-black: #0a1929;
+    /* Bleu très foncé */
+    --color-gray: #546e7a;
+    /* Gris-bleu pour textes */
+    --color-light-gray: #d1e3f0;
+    /* Bordures bleues claires */
+
+    /* Couleur d'accent : Bleu océan */
+    --color-accent: #0077cc;
+    /* Bleu océan */
+    --color-accent-light: #0099ff;
+    /* Bleu clair hover */
+    --color-accent-dark: #005599;
+    /* Bleu foncé */
+
+    /* Dégradés bleu pour effets premium */
+    --gradient-blue: linear-gradient(135deg, #0077cc 0%, #00aaff 50%, #0077cc 100%);
+    --gradient-blue-hover: linear-gradient(135deg, #0099ff 0%, #00ccff 50%, #0099ff 100%);
+
+    /* === BACKGROUNDS === */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f8ff;
+    --bg-card: rgba(0, 119, 204, 0.03);
+    --bg-card-hover: #f8fcff;
+
+    /* === BORDURES & OMBRES === */
+    --border-color: #d1e3f0;
+    --border-accent: #0077cc;
+
+    --shadow-base: 0 6px 20px rgba(0, 119, 204, 0.08);
+    --shadow-hover: 0 10px 30px rgba(0, 119, 204, 0.15);
+    --shadow-glow: 0 0 20px rgba(0, 119, 204, 0.3);
+    --shadow-button: 0 4px 15px rgba(0, 119, 204, 0.25);
+
+    /* === TYPOGRAPHIE === */
+    --text-primary: #0a1929;
+    --text-secondary: #546e7a;
+    --text-muted: #90a4ae;
+}
+
+/* ========================================
+   ÉLÉMENTS GLOBAUX
+   ======================================== */
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ========================================
+   TOPBAR
+   ======================================== */
+
+.topbar {
+    background: linear-gradient(90deg, #0a1929 0%, #1a3a52 100%);
+    backdrop-filter: blur(10px);
+    color: var(--color-white);
+}
+
+.topbar a {
+    color: var(--color-white);
+}
+
+.topbar a:hover {
+    color: var(--color-accent-light);
+}
+
+.topbar .iconify {
+    color: var(--color-accent-light) !important;
+}
+
+.topbar.scrolled {
+    background: rgba(10, 25, 41, 0.7);
+    backdrop-filter: blur(6px);
+}
+
+.topbar.scrolled a {
+    color: var(--color-white);
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.site-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.site-header.scrolled {
+    background: rgba(10, 25, 41, 0.95);
+    backdrop-filter: blur(6px);
+}
+
+.site-header .logo {
+    filter: brightness(1.1) contrast(1.05);
+}
+
+.site-header.scrolled .logo {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+    border: 2px solid var(--color-accent-light);
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.main-nav a {
+    color: var(--text-primary);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-accent);
+}
+
+.site-header.scrolled .main-nav a {
+    color: var(--color-white);
+}
+
+.site-header.scrolled .main-nav a:hover {
+    color: var(--color-accent-light);
+}
+
+/* Menu mobile */
+@media (max-width: 900px) {
+    .main-nav {
+        background: linear-gradient(180deg, #0a1929 0%, #1a3a52 100%);
+    }
+
+    .main-nav a {
+        color: var(--color-white) !important;
+    }
+
+    .main-nav a:not(.btn-outline):hover {
+        color: var(--color-accent-light) !important;
+    }
+}
+
+/* ========================================
+   BOUTONS
+   ======================================== */
+
+/* Button Primary */
+.btn-primary {
+    background: var(--gradient-blue);
+    border: 2px solid var(--color-accent);
+    color: var(--color-white);
+    font-weight: 700;
+    box-shadow: var(--shadow-button);
+    text-shadow: none;
+}
+
+.btn-primary:hover {
+    background: var(--gradient-blue-hover);
+    border-color: var(--color-accent-light);
+    color: var(--color-white);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-3px);
+}
+
+/* Button Outline */
+.btn-outline,
+.main-nav a.btn-outline {
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    background: transparent;
+}
+
+.btn-outline:hover,
+.main-nav a.btn-outline:hover {
+    background: var(--color-accent);
+    color: var(--color-white) !important;
+    border-color: var(--color-accent-light);
+    box-shadow: var(--shadow-glow);
+}
+
+.site-header.scrolled .main-nav a.btn-outline {
+    border-color: var(--color-accent-light);
+    color: var(--color-accent-light);
+}
+
+/* ========================================
+   BURGER MENU
+   ======================================== */
+
+.burger span {
+    background: var(--text-primary);
+}
+
+.site-header.scrolled .burger span {
+    background: var(--color-accent-light);
+}
+
+.burger.active span {
+    background-color: var(--color-accent-light) !important;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
+    background: var(--bg-primary);
+}
+
+.hero-bg {
+    filter: blur(12px) brightness(0.5) saturate(1.2);
+}
+
+.hero-text h1 {
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-text h1 .accent {
+    color: var(--color-accent-light);
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-text p {
+    color: var(--color-white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.hero-image-circle {
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 30px rgba(0, 119, 204, 0.4),
+        0 0 60px rgba(0, 119, 204, 0.2);
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+.section {
+    background: var(--bg-primary);
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+}
+
+.title-part-h2 {
+    color: var(--text-primary);
+}
+
+.title-part-h2 span {
+    color: var(--color-accent);
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-base);
+}
+
+.card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    color: var(--color-accent);
+}
+
+.card p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   ICÔNES
+   ======================================== */
+
+.iconify.icon {
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 5px rgba(0, 119, 204, 0.3));
+    font-size: 48px;
+}
+
+.card:hover .iconify.icon {
+    color: var(--color-accent-light);
+    filter: drop-shadow(0 0 10px rgba(0, 119, 204, 0.6));
+}
+
+/* ========================================
+   SERVICES
+   ======================================== */
+
+.service-card img {
+    border: 2px solid var(--border-color);
+}
+
+.service-text h3 {
+    color: var(--text-primary);
+}
+
+.service-text p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   FORMULAIRES
+   ======================================== */
+
+.contact-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(0, 119, 204, 0.2);
+}
+
+/* ========================================
+   CTA TEXT
+   ======================================== */
+
+.cta-text h2 {
+    color: var(--text-primary);
+}
+
+.cta-text p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.site-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-logo .logo {
+    filter: brightness(1.1);
+}
+
+.footer-description {
+    color: var(--text-secondary);
+}
+
+.footer-menu h3,
+.footer-contact h3 {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-menu ul li,
+.footer-contact ul li {
+    color: var(--text-secondary);
+}
+
+.footer-menu ul li a,
+.footer-contact ul li a {
+    color: var(--text-secondary);
+}
+
+.footer-menu ul li a:hover,
+.footer-contact ul li a:hover {
+    color: var(--color-accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+/* ========================================
+   STEPS GRID
+   ======================================== */
+
+.steps-grid .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+.steps-grid .card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ========================================
+   EFFETS SPÉCIAUX OCEAN
+   ======================================== */
+
+/* Effet brillance sur les titres */
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.title-part-h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(0, 119, 204, 0.2),
+            transparent);
+    animation: shimmer 3s infinite;
+}
+
+/* Vagues océaniques (optionnel) */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(0, 119, 204, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* ========================================
+   AJUSTEMENTS RESPONSIVE
+   ======================================== */
+
+@media (max-width: 900px) {
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .title-part-h2 {
+        font-size: 28px;
+    }
+}

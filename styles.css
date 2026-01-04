@@ -227,6 +227,10 @@ ol {
     opacity: 0.7;
 }
 
+.topbar .iconify {
+    color: var(--color-white) !important;
+}
+
 .topbar.scrolled {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(6px);
